@@ -42,3 +42,13 @@ var writers = [
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
+
+let saludar = (arr) => {
+  let primter = element => {
+    if(element.alive) {
+      console.log(`Hola mi nombre es ${element.firstName} ${element.lastName}. Tengo ${element.age} años y trabajo como ${element.occupation}`)
+    }
+  }
+  arr.forEach(primter);
+}
+saludar(writers)
