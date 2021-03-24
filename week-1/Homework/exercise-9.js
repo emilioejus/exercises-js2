@@ -41,26 +41,86 @@ var product2 = {
   price: 9.99,
   stock: 2
 };
+var product3 = {
+  id: 3,
+  name: "Mouse",
+  price: 22.47,
+  stock: 35
+};
+var product4 = {
+  id: 4,
+  name: "SmartPhone",
+  price: 160.00,
+  stock: 10
+};
 
 products.push(product1);
 products.push(product2);
+products.push(product3);
+products.push(product4);
 
-var shoppingCart = {
+
+/**carrito de compras, su metodo purchase lo vacia el carrito y
+ elimina la cantidad de productos en el stock de los productos exitentes!!*/
+shoppingCart = {
   totalPrice: 0,
-  selectedProducts: []
+  selectedProducts: [],
+  Purchase: function(arr) {
+    let pur = product => {
+      if(this.selectedProducts.indexOf(product) > -1) {
+        return  this.totalPrice = 0,
+                this.selectedProducts.shift(),
+                product.stock = product.stock -1;          
+      }   
+    }
+    arr.map(pur)
+  },
+  empty: function() {
+    this.totalPrice = 0,
+    this.selectedProducts = []
+  }
 };
 
+// Agrega un producto al carrito y tambien si el producto no tiene stock no lo agrega!!
 function addToShoppingCart(id){
-
+  let idd = element => {
+    if(id === element.id) {
+      return element.id
+    }
+  }
+  if(products.find(idd).id && products.find(idd).stock > 0) {
+    shoppingCart.totalPrice = shoppingCart.totalPrice + products.find(idd).price, 
+    shoppingCart.selectedProducts.push(products.find(idd))
+  }
 }
 
+// remueve un producto existente en el carrito!!
 function removeFromShoppingCart(id){
+  let removee = element => {
+    if(id === element.id) {
+      return element.id
+    }
+  }
+
+  let filter = element => {
+    if(id != element.id) {
+      return element
+    }
+  }
+
+  if(id === parseFloat(shoppingCart.selectedProducts.map(removee).join(""))) { 
+    shoppingCart.totalPrice =shoppingCart.totalPrice - shoppingCart.selectedProducts.find(removee).price,
+    shoppingCart.selectedProducts = shoppingCart.selectedProducts.filter(filter)
+  }else {
+    return console.log("Error el producto no exiten en el carrito")
+  }
 
 }
-
+// llama los metodos del objeto carrito para comprar o para vaciar!!
 function shop(){
-
-}
+  shoppingCart.Purchase(products);
+  //shoppingCart.empty()
+} 
 
 //results
 addToShoppingCart(1);
@@ -88,3 +148,10 @@ console.log("Step 5");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
 console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+
+/** pruebas adicionales para saber si se esta eliminando los productos del stock y
+si el producto que se quiere remover no existe en el carrito!! */
+console.log();
+console.log("<----- prueba adicional ----->");
+console.log(products.map(product => product.stock));
+removeFromShoppingCart(3)

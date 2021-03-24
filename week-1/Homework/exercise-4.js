@@ -59,13 +59,35 @@ let restaurant1 = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-      // Complete here
+      let availbRes = [];
+      let availab = element => {
+        if(numberOfPeople <= element.totalSeats - element.numberOfCustomers) {
+           availbRes.push(element.name)
+        }
+      }
+      restaurants.map(availab);
+      return availbRes
     },
     findRestaurantServingDish: function (dishName) {
-      // Complete here
+      let servin = [];
+      let exist = element => {
+        if(element.menu.includes(dishName)) {
+           servin.push(element.name)
+        }
+      }
+      restaurants.map(exist);
+      return servin
     },
     countNumberOfRestaurantsInArea: function (area) {
-      // Complete here
+      let many = [];
+      let exist = element => {
+        let resArea = element.address.area
+        if(resArea === area) {
+          many.push(resArea)
+        }
+      }
+      restaurants.map(exist);
+      return many.length
     },
   };
   

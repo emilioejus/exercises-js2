@@ -16,10 +16,34 @@ let coffeeMachine = {
       flatWhite: 3.0,
     },
     insertedAmount: 0,
-    insertMoney: function (amount) {},
-    getCoffee: function (coffee) {},
+    insertMoney: function (amount) {
+      return this.insertedAmount = amount
+    },
+    getCoffee: function (coffee) {
+      //secon option
+      // en if puede ir Object.keys(this.prices).includes(coffee) para saber si existe el café!!!
+      if(this.prices.hasOwnProperty(coffee) && this.insertedAmount >= this.prices[coffee] ) {
+        return `Please take your ${coffee}`
+      }else {
+        return `Expected result: 'Sorry you don't have enough money for a ${coffee}`
+      }
+
+      // firs option "muy poco escalable"
+      //if(coffee === Object.keys(this.prices)[0] && this.insertedAmount >= Object.values(this.prices)[0] ) {
+      //  return `Please take your ${coffee}`;
+      //}else if(coffee === Object.keys(this.prices)[1] && this.insertedAmount >= Object.values(this.prices)[1]) {
+      //  return `Please take your ${coffee}`
+      //}else if(coffee === Object.keys(this.prices)[2] && this.insertedAmount >= Object.values(this.prices)[2]) {
+      //  return `Please take your ${coffee}`
+      //} else {
+      //  return `Expected result: 'Sorry you don't have enough money for a ${coffee}`
+      //}
+    },
+    
   };
+
   
+
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
   */
