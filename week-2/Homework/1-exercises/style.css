@@ -157,3 +157,10 @@ body {
 	   max-height: 80px;
 	}
 }
+
+.clasLi {
+	width: calc(25% - 51px);
+    margin: 15px;
+    padding: 10px;
+    min-width: 350px;
+}

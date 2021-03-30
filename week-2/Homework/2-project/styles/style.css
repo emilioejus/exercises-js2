@@ -157,3 +157,6 @@ body {
 	   max-height: 80px;
 	}
 }
+#exampleInputEmail1.error::placeholder {
+	color: tomato
+}

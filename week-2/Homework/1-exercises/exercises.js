@@ -13,8 +13,18 @@
  *      .....
  * </div>
  */
+// toma un array, por cada iteracion crea un h1 y un h2,
+// le agrega el valor de cada iteracion y fibalmente se agrega al DOM
+let content = document.querySelector("#content");
+console.log(content);
 function exerciseOne(arrayOfPeople) {
-  let content = document.querySelector("#content");
+  arrayOfPeople.forEach(persona => {
+    let h1 = document.createElement("h1")
+    h1.append(persona.name);
+    let h2 = document.createElement("h2")
+    h2.append(persona.job);
+    content.append(h1, h2)
+  })
 }
 
 /**
@@ -24,8 +34,22 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
+
+/** En la siguiente function se crea un elemento ul,
+ * luego se recorre el array con un forEach para tomar cada valor,
+ * dentro de la iteracion se crea un elemento li para agregar el valor
+ * de cada item en el li y a su vez se agrega ese li al ul y al final
+ * el ul se agrega al content del dom
+ */
 function exerciseTwo(shopping) {
-  //Write your code in here
+  let ul = document.createElement("ul");
+
+  shopping.forEach(item => {
+    let li = document.createElement("li");
+    li.append(item)
+    ul.append(li)
+  })
+  content.append(ul)
 }
 
 /**
@@ -58,7 +82,34 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+  let elementH1 =  document.createElement("h1");
+  elementH1.append("Book List")
+  let elementUl = document.createElement("ul");
+  elementUl.style.display = "flex";
+  elementUl.style.listStyle = "none";
+  let img1 = "./img/the-design.jpeg";
+  let img2 = "./img/the-most.jpeg";
+  let img3 = "./img/the-pragmatic.png";
+  let imgArr = [];
+  imgArr.push(img1, img2, img3)
+  console.log(img1)
+  books.forEach((book, index) => {
+    let elementLi = document.createElement("li");
+    let elementP = document.createElement("p");
+    let elementImg = document.createElement("img");
+    elementP.append(`${book.title}-${book.author}`);
+    elementLi.append(elementP, elementImg);
+    elementLi.classList.add('clasLi')
+
+    elementImg.src = imgArr[index]
+    if(book.alreadyRead) {
+      elementLi.style.backgroundColor = "green"
+    }else {
+      elementLi.style.backgroundColor = "red"
+    }
+    elementUl.append(elementLi);
+  })
+  content.append(elementH1, elementUl)
 }
 
 //
