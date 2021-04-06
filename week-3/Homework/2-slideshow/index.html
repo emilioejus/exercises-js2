@@ -2,16 +2,70 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" 
+    crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
+    
   </head>
   <body>
+    
     <!-- Write your HTML in here -->
+
+    <!-- version 1-->
+    <header>
+      <h1>Imagen Carousel. Level 1 Demo</h1>
+    </header>
+
+    <div id="carouselExampleControls" class="carousel slide" >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img id="img1" src="https://images.unsplash.com/photo-1617437211966-b67174cde68e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1617333776055-a0cce30e365f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1617424981732-c1bf41d2a096?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1866&q=80" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1617647319190-0dfd67b9c003?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1860&q=80" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+    <div id="buttons">
+      <button id="autoBack" type="button" class="btn btn-secondary btn-lg" >Auto Back</button>
+      <button id="back" type="button" class="btn btn-secondary btn-lg">Back</button>
+      <button id="stop"  type="button" class="btn btn-secondary btn-lg">Stop</button>
+      <button id="forwar" type="button" class="btn btn-secondary btn-lg">Forwar</button>
+      <button id="autoForwar"  type="button" class="btn btn-secondary btn-lg" > Auto Forwar</button>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script> 
+
+    <!-- version 2-->
+   <!-- <header>
+      <h1>Imagen Carousel. Level 1 Demo</h1>
+    </header>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img id="img" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+    <div id="btn-place">
+      <button id="aBack" type="button" class="btn btn-secondary">AutoBack</button>
+      <button id="back" type="button" class="btn btn-secondary">Back</button>
+      <button id="stop" type="button" class="btn btn-secondary">Stop</button>
+      <button id="forwar" type="button" class="btn btn-secondary">Forwar</button>
+      <button id="aForwar" type="button" class="btn btn-secondary">AutoForwar</button>
+    </div> -->
+
+
+    <script src="slideshow.js"></script>
   </body>
 </html>

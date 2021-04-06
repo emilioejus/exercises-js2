@@ -1,1 +1,43 @@
 /** Write your CSS in here **/
+/** version 1 **/
+body {
+    margin: 0px;
+}
+header {
+    text-align: center;
+}
+
+#carouselExampleControls {
+
+    margin: 40px 40px 40px 40px;
+}
+.carousel-item > img {
+    width: 1000px;
+    height: 600px;
+}
+#buttons {
+    margin: 20px 0px 0px 40px;
+} 
+
+
+
+/** version 2 **/
+/**body {
+    margin: 0px;
+}
+header {
+    text-align: center;
+}
+
+#carouselExampleSlidesOnly {
+
+    margin: 40px 40px 40px 40px;
+}
+.carousel-item > img {
+    width: 1000px;
+    height: 600px;
+}
+#btn-place {
+    text-align: center;
+    margin: 20px 0px 0px 40px;
+}
